@@ -1,0 +1,208 @@
+<%- include("template/cabecera", { title: "Reservar", style: "servicios" }) %>
+    <%-
+include("template/navbar") %>
+
+
+
+
+<div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <h2 class="rojo mb-4">Rellena el formulario</h2>
+        <p class="fs-5">Rellena todos los campos que sean obligatorios para realizar tu reserva del servicio escogido.</p>
+      </div>
+  
+      <div class="row g-5">
+
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <i class="bi bi-cart-fill rojo"></i><span class="rojo">Carrito</span>
+          </h4>
+          <ul id="carrito" class="list-group mb-3">
+
+
+            
+          </ul>
+
+          <span>Total</span>
+              <strong id="total" class="rojo">0.00</strong><strong class="rojo">€</strong>
+
+  
+
+        </div>
+
+
+        <div class="col-md-7 col-lg-8 ">
+          <h4 class="mb-3 rojo">Datos de la compra <i class="bi bi-clipboard2-data rojo"></i></h4>
+          <form method="post" action="/reservas/compra">
+            <div id="padre" class="row g-3">
+              <div class="col-sm-6">
+
+                <label for="firstName" class="form-label">Elige el servicio</label>
+                <select id="servicio" name="servicio" class="form-select border border-danger" required>
+
+                  <% arrayServicios.forEach(servicio => { %>
+
+                    <option> <%= servicio.nombre %>  </option>
+                   
+                  <% }) %>
+
+
+                </select>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Elige la región</label>
+
+                <select id="region" name="region" class="form-select border border-danger" required>
+
+                <% arrayRegiones.forEach(region => { %>
+
+                  <option> <%= region.nombre %>  </option>
+                 
+                <% }) %>
+
+              </select>
+              </div>
+  
+              <div class="col-md-12">
+                <label for="country" class="form-label">Selecciona la hora</label>
+                <select id="horario"  class="form-select border border-danger" name="horario" required>
+                  
+                  <% arrayHorarios.forEach(horarios => { %>
+                    
+                    <option><%= horarios.hora %></option>
+                    
+                    <% }) %>
+                    
+                  </select>
+                </div>
+                
+                <div class="col-12">
+                  <label class="form-label">Selecciona la fecha</label>
+                  <div class="input-group has-validation">
+                    <input type="date" class="form-control border border-danger" name="fechareserva" id="fechareserva" required/>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Nombre de la reserva</label>
+                  <div class="input-group has-validation">
+                    <input type="text" class="form-control border border-danger" name="nombre" placeholder="Nombre de la reserva" required>
+                  </div>
+                </div>
+
+                <!-- botones -->
+
+
+  
+            </div>
+  
+            <hr class="my-4">
+  
+            <h4 class="mb-3 rojo">Pago  <i class="bi bi-credit-card"></i></h4>
+  
+            <div class="my-3">
+              <div class="form-check">
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required>
+                <label class="form-check-label" for="credit">Tarjeta de credito</label>
+              </div>
+              <div class="form-check">
+                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="debit">Tarjeta de débito</label>
+              </div>
+            </div>
+  
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Nombre de la tarjeta</label>
+                <input type="text" class="form-control border border-danger" placeholder="Nombre del propietario" required="Nombre">
+              </div>
+  
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label">Numero de la tarjeta</label>
+                <input type="text" id="NumeroTarjeta" oninput="miTarjeta()" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" class="form-control border border-danger" required>
+              </div>
+  
+              <div class="col-md-3">
+                <label for="cc-expiration" class="form-label">Expiración</label>
+                <input type="text" id="fecha" oninput="mifecha()" class="form-control border border-danger" minlength="5" maxlength="5" placeholder="mm/yy" required>
+              </div>
+  
+              <div class="col-md-3">
+                <label class="form-label">CVV</label>
+                <input type="number" class="form-control border border-danger" id="codigo" placeholder="XXX" required>
+              </div>
+            </div>
+            
+            <!-- inputs hidden para el servidor -->
+
+            <input type="text" name="personasStandard" id="personas1"    hidden>
+            <input type="text" name="personasPremium" id="personas2"  hidden>
+            <input type="text" name="personasVIP" id="personas3" hidden>
+
+            <input type="text" name="servicio" id="guardarservicio"   hidden>
+            <input type="text" name="horario" id="guardarhorario"   hidden>
+            <input type="text" name="region" id="guardarregion"   hidden>
+            <input type="text" name="fechacompra" id="guardarfecha"   hidden>
+
+            <button id="comprarBoton" class="w-100 btn btn-danger btn-lg my-5" type="submit" disabled>Comprar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="../public/JS/carrito.js"></script>
+  <script>
+
+    var tarjeta = document.getElementById('NumeroTarjeta')
+    var codigo = document.getElementById('codigo')
+    var fecha = document.getElementById('fecha')
+
+function mifecha() {
+
+let input = document.getElementById('fecha').value;
+
+if (input.length == 2) {
+
+  input += '/';
+  
+  document.getElementById('fecha').value = input;
+
+}
+
+}
+
+function miTarjeta() {
+
+let input = document.getElementById('NumeroTarjeta').value;
+
+if (input.length === 4 || input.length === 9 ||input.length === 14) {
+
+  input += ' ';
+  
+  document.getElementById('NumeroTarjeta').value = input;
+
+}
+
+
+}
+
+
+document.getElementById('codigo').oninput = function () {
+    if (this.value.length > 3) {
+        this.value = this.value.slice(0,3); 
+    }
+}
+
+
+
+
+
+  </script>
+
+
+
+  <%- include("template/footer") %>

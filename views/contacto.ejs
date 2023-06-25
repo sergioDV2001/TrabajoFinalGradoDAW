@@ -1,0 +1,78 @@
+<%- include("template/cabecera", { title: "Contacto", style: "index" }) %> <%-
+include("template/navbar") %>
+
+<% if (mimensaje == 'true') { %>
+ 
+  <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+    <strong><i class="bi bi-check-all"></i> Enviado</strong> Tu mensaje se ha enviado, te contactaremos lo mas rapido posible.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<% } %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 geisha">
+      <div class="capaSol"></div>
+      <img src="/public/media/img/geisha.png" />
+    </div>
+    <div class="col-md-8 formulario">
+      <h1 class="rojo">Contáctanos</h1>
+
+      <form action="/contacto" method="post">
+        <div class="row my-5">
+          <div class="col-md-6">
+            <label class="form-label rojo">Correo electrónico</label>
+            <input
+              name="email"
+              type="email"
+              class="form-control mb-2"
+              placeholder="Correo"
+              required
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label rojo">Nombre</label>
+            <input
+              name="nombre"
+              type="text"
+              class="form-control"
+              placeholder="Nombre"
+              required
+            />
+          </div>
+
+          <div class="col-md-12">
+            <label class="form-label rojo">Asunto</label>
+            <input
+              name="asunto"
+              type="text"
+              class="form-control"
+              placeholder="Asunto"
+              required
+            />
+          </div>
+
+
+
+          <div class="col-md-12 my-4">
+            <label class="form-label rojo">Mensaje</label>
+            <textarea
+              name="mensaje"
+              class="form-control"
+              placeholder="Mensaje"
+              required
+            ></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <button type="submit" class="py-2 miBoton">Enviar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include("template/footer") %>

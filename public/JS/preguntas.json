@@ -1,0 +1,102 @@
+[
+    {
+        "pregunta": " Japón también es llamado",
+        "respuesta": "El país del sol naciente",
+        "incorrecta1": "La tierra de los samurais",
+        "incorrecta2": "El país del sushi",
+        "incorrecta3": "El país del anime",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/f18130c2-5823-4fac-8200-53a2d8e2865a.jpg",
+        "objectFit": "cover"
+    },
+    {
+
+        "pregunta": "Geográficamente, ¿Japón esta conformado por cuántas islas principales?",
+        "respuesta": "4 islas",
+        "incorrecta1": "3 islas",
+        "incorrecta2": "5 islas",
+        "incorrecta3": "6 islas",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/e4e2fb0c-51a8-4a42-bae0-ff1873f855fe.jpg",
+        "objectFit": "cover"
+    },
+
+    {
+
+        "pregunta": "¿Cuántos habitantes tiene Japón?",
+        "respuesta": "128 millones",
+        "incorrecta1": "76 millones",
+        "incorrecta2": "89 millones",
+        "incorrecta3": "78 millones",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/b5e6a127-1778-435c-86c0-19f34ce04fc8.jpg",
+        "objectFit": "cover"
+    },
+    {
+
+        "pregunta": "El tren más rápido del mundo se llama:",
+        "respuesta": "Shinkansen",
+        "incorrecta1": "Akihiro",
+        "incorrecta2": "Sakutaro",
+        "incorrecta3": "Rokito",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/28bbb37e-055c-481d-bbbe-0393b1d4b0ba.jpg",
+        "objectFit": "cover"
+    },
+    {
+
+        "pregunta": "¿Cuántos volcanes hay en Japón?",
+        "respuesta": "Mas de 100",
+        "incorrecta1": "77 volcanes",
+        "incorrecta2": "21 volcanes",
+        "incorrecta3": "52 volcanes",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/90716a87-bdad-4b40-a13e-49c70e1e4ffb.jpg",
+        "objectFit": "cover"
+    },
+    {
+
+        "pregunta": "Una Geisha es...",
+        "respuesta": "Una artista tradicional japonesa",
+        "incorrecta1": "Mujer que trabaja preparando sushi",
+        "incorrecta2": "Una mujer dedicada a la prostitución",
+        "incorrecta3": "Mujer que trabaja en el campo",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/712a0ae6-54b3-4a33-9544-b32c80ad6282.jpg",
+        "objectFit": "cover"
+    },
+    {
+
+        "pregunta": "La estación de metro más transitada del mundo se llama...",
+        "respuesta": "Shinjuku",
+        "incorrecta1": "Nara",
+        "incorrecta2": "Tokyo",
+        "incorrecta3": "Chihiro",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/aa79010d-a646-4d9c-b110-6faadb560bd4.jpg",
+        "objectFit": "cover"
+    },
+    {
+
+        "pregunta": "¿Cuántos temblores hay en Japón al año?",
+        "respuesta": "1500",
+        "incorrecta1": "1000",
+        "incorrecta2": "700",
+        "incorrecta3": "900",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/05eeb340-c501-4bc8-ae42-181ace187632.jpg",
+        "objectFit": "cover"
+    },
+    {
+
+        "pregunta": "¿Cuántos alfabetos tiene la escritura japonesa?",
+        "respuesta": "4",
+        "incorrecta1": "6",
+        "incorrecta2": "3",
+        "incorrecta3": "5",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/8735eb35-c1d9-4ec6-9e4c-ac57de69a950.jpg",
+        "objectFit": "cover"
+    },
+    {
+
+        "pregunta": "¿En que año lanzaron las bombas atómicas en Hiroshima y Nagasaki?",
+        "respuesta": "1945",
+        "incorrecta1": "1944",
+        "incorrecta2": "1946",
+        "incorrecta3": "1947",
+        "imagen": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit,dpr_1.5/cdn/8d0660e0-d774-4a9a-8840-73c4c35bbb0b/28f15819-de47-47d8-82a1-b8cc4f570cb2.jpg",
+        "objectFit": "cover"
+    }
+]

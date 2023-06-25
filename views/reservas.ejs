@@ -1,0 +1,153 @@
+<%- include("template/cabecera", {
+    title: "Reservas",
+    style: "servicios"  
+    }) %>
+  <%- include("template/navbar") %>
+
+  <% if ( confirmar === "true") { %>
+
+    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+      <strong><i class="bi bi-exclamation-triangle-fill"></i> Felicidades</strong> ¡Se ha realizado tu reserva con éxito esperamos que la deisfrutes! :)
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+       
+    <% } %>
+
+
+  <div class="container py-3">
+    
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="tituloh1 rojo mt-5">Precios</h1>
+      <p class="fs-5 mt-5">Elige la <span class="rojo">calidad</span> de la reserva que mejor te convenga. Cada calidad trae sus propias <span class="rojo">ventajas</span> respecto a las demas. ¡Consulta los precios y <span class="rojo">disfruta</span> de nuestros servicios!</p>
+    </div>
+
+    <main>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal rojosin">Standard</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">€10<small class="text-muted fw-light">/persona</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Elige el servicio</li>
+                <li>Seguro del cliente</li>
+                <li>Correo electrónico de soporte </li>
+                <li>Ruta completa</li>
+              </ul>
+              <a href="/reservas/compra" class="w-100 rojosin btn btn-lg btn-outline-danger">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal rojosin">Premium</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">€20<small class="text-muted fw-light">/persona</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Elige el servicio</li>
+                <li>Seguro del cliente</li>
+                <li>Correo electrónico de soporte </li>
+                <li>Ruta completa</li>
+              </ul>
+              <a href="/reservas/compra" class="w-100 rojosin btn btn-lg btn-danger">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-danger">
+            <div class="card-header py-3 text-white bg-danger border-danger">
+              <h4 class="my-0 fw-normal rojosin">VIP</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">€35<small class="text-muted fw-light">/persona</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Elige el servicio</li>
+                <li>Seguro del cliente</li>
+                <li>Correo electrónico de soporte </li>
+                <li>Ruta completa</li>
+              </ul>
+              <a href="/reservas/compra" class="w-100 rojosin btn btn-lg btn-danger">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <h2 class="rojo text-center mb-4">Ventajas de planes</h2>
+  
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th style="width: 34%;"></th>
+              <th class="rojo" style="width: 22%;">Standard</th>
+              <th class="rojo" style="width: 22%;">Premium</th>
+              <th class="rojo" style="width: 22%;">VIP</th>
+            </tr>
+          </thead>
+          <tbody class="rojo">
+            <tr>
+              <th scope="row" class="text-start rojo">Selección de hora</th>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start rojo">Guia turístico especializado</th>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start rojo">Comidas incluidas</th>
+              <td></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start rojo">Sorteo</th>
+              <td></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start rojo">Pack de bienvenida</th>
+              <td></td>
+              <td></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start rojo">Sesión de fotos</th>
+              <td></td>
+              <td></td>
+              <td><i class="bi bi-check-lg rojo"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row my-5 align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white fondorojo rounded-3">
+            <h2 class="rojosin">No te quedes con dudas</h2>
+            <p>Si tienes alguna duda respecto a nuestros servicios, no te quedes con ella mandanos tu consulta y te ayudaremos lo mas rapido posible.</p>
+            <a href="/contacto" class=" btn btn-lg btn-light rojo">Contáctenos</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 rounded-3">
+            <h2 class="rojosin">Disfruta</h2>
+            <p>Déjate llevar por la cultura nipona con este viaje por las ciudades Japón. Desde las famosas ciudades hasta las islas más turisticas</p>
+            <a href="/reservas/compra" class=" btn btn-lg btn-danger rojo">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+
+<%- include("template/footer") %>

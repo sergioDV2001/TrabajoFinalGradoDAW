@@ -1,0 +1,49 @@
+<header class="p-3 text-white">
+    <nav class="navbar navbarfondo navbar-dark navbar-expand-lg sticky-top">
+      <div class="container">
+        <a href="/" class="navbar-brand enlace"><img src="/public/media/img/logo.png" width="80px"></a>
+  
+        <!-- Boton para el menu movil -->
+        <button 
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+  
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Menu de navegacion -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav  mb-2 mb-lg-0 ">
+
+            <li class="nav-item lista"><a href="/" class="enlace">Inicio</a></li>
+            <li class="nav-item lista"><a href="/servicios" class="enlace">Servicios</a></li>
+            <li class="nav-item lista"><a href="/contacto" class="enlace">Contacto</a></li>
+            <li class="nav-item lista"><a href="/reservas" class="enlace">Reservas</a></li>
+            <li class="nav-item lista"><a href="/CuantoSabesDeJapon" class="enlace">Cuanto sabes de Japon</a></li>
+            
+          </ul>
+        </div>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav  mb-2 mb-lg-0 ">
+
+        <% if (user) { %>
+
+          <li class="nav-item lista"><a href="/perfil" id="btnUsuarios" class="enlace">Perfil</a></li>
+          <li class="nav-item lista"><a href="/cerrarSesion" id="btnUsuarios" class="enlace">Cerrar sesion</a></li>
+         
+        <% }else{ %>
+
+        <li class="nav-item lista"><a href="/login" id="btnUsuarios" class="enlace">Iniciar sesion</a></li>
+        <li class="nav-item lista"><a href="/registro" id="btnUsuarios" class="registro">Registrarse</a></li>
+
+        <% } %>
+
+      </ul>
+    </div>
+
+    </nav>
+</header>

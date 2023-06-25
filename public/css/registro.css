@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Noto+Sans+JP:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.pantalla{
+
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  
+
+}
+
+.texto-primario{
+
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.texto-secundario{
+
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background: url(../media/img/registro.jpg) 50% fixed;
+  background-size: cover;
+}
+
+header {
+  background-color: #dc3545;
+}
+
+.navbarfondo {
+  background-color: #dc3545;
+}
+
+.titulosh1 {
+  margin-bottom: 10%;
+}
+
+.registro {
+  padding: 13%;
+  background-color: #ffffff;
+  color: #dc3545;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 2px solid white;
+  transition: 200ms;
+}
+
+.registro:hover {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+@media (max-width: 991.9px) {
+  .navbarfondo {
+    background-color: #dc3545;
+    height: auto;
+  }
+  .lista {
+    margin-top: 5%;
+  }
+
+  .registro {
+    padding: 1%;
+    background-color: #ffffff;
+    color: #dc3545;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 2px solid white;
+  }
+}
+
+@media (max-width: 665px) {
+  .navbarfondo {
+    background-color: #dc3545;
+    height: auto;
+  }
+}
+
+.enlace {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  transition: 200ms;
+}
+
+.enlace:hover {
+  color: rgb(138, 0, 0);
+}
+
+.lista {
+  margin-left: 20px;
+}
+
+.hamburguesa {
+  background-color: white;
+}
+
+.boton-formulario{
+
+  background-color: #dc3545;
+  color: #ffff;
+  border: solid 2px #dc3545;
+
+}
+.boton-formulario:hover{
+
+  background-color: #ffffff;
+  color: #dc3545;
+  border: solid 2px #dc3545;
+
+}
+
+.fondorojo {
+  background-color: #dc3545;
+}

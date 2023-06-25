@@ -1,0 +1,42 @@
+<%- include("template/cabecera", { title: "Iniciar sesion", style: "login" }) %> <%-
+include("template/navbar") %>
+
+<% if (mensajeError.length > 0) { %>
+
+  <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+    <strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR</strong> <%= mensajeError  %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+     
+  <% } %>
+  
+
+  <div class="container col-xl-10 col-xxl-8 px-4 pantalla">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3 texto-primario">Inicia sesion</h1>
+        <p class="col-lg-10 fs-4 texto-secundario">¡Y reserva todas tus experiencias en Japón, con nosotros!</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form action="/login" method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" name="email" placeholder="Correo electronico" required>
+            <label for="floatingInput">Correo electronico</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" name="password" placeholder="Contraseña" required maxlength="16" minlength="8">
+            <label for="floatingPassword">Contraseña</label>
+          </div>
+          <button class="w-100 btn btn-lg boton-formulario mb-3" type="submit">Iniciar sesion</button>
+          
+          <small class="text-muted">¿No tienes una cuenta? <a href="/registro">Registrate</a></small>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+<%- include("template/footer") %>

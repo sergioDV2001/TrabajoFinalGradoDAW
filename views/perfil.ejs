@@ -1,0 +1,150 @@
+<%- include("template/cabecera", { title: "Perfil", style: "servicios" }) %>
+    <%-
+include("template/navbar") %>
+
+<section >
+    <div class="container py-5">
+  
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+              <h5 class="my-3"><%= user.nombre  %> <%= user.apellidos  %></h5>
+              <p class="text-muted mb-4"><%= user.email  %></p>
+            </div>
+          </div>
+          <div class="card mb-4 mb-lg-0">
+            <div class="card-body p-0">
+              <ul class="list-group list-group-flush rounded-3">
+                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                  <p class="mb-0 rojo">Editar cuenta</p>
+                  <button id="editarcuenta" class="btn btn-none"><i class="bi bi-pencil-square fs-4 text-success"></i></button></i>                          
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                  <p class="mb-0 rojo">Borrar cuenta</p>
+                  <button id="borrarcuenta" class="btn btn-none"><i class="bi bi-trash3-fill fs-4 text-warning"></i></button></i>                
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card mb-4">
+            <div class="card-body">
+              <form action="/perfil" method="post">
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0 rojo">Correo electrónico</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0"><%= user.email  %></p>
+                  </div>
+                </div>
+              <hr>
+              
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0 rojo">Nombre</p>
+                </div>
+                <div id="nombrePadre" class="col-sm-9">
+                  <p id="nombre" class="text-muted mb-0"><%= user.nombre  %></p>
+                </div>
+              </div>
+              <hr>
+
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0 rojo">Apellidos</p>
+                </div>
+                <div id="apellidosPadre" class="col-sm-9">
+                  <p id="apellidos" class="text-muted mb-0"><%= user.apellidos  %></p>
+                </div>
+              </div>
+
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0 rojo">Teléfono</p>
+                </div>
+                <div id="telefonoPadre" class="col-sm-9">
+                  <p id="telefono" class="text-muted mb-0"><%= user.telefono  %></p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0 rojo">Dirección</p>
+                </div>
+                <div id="direccionPadre" class="col-sm-9">
+                  <p id="direccion" class="text-muted mb-0"><%= user.direccion %></p>
+                </div>
+
+                <input name="id" type="text" value="<%= user.id %>" hidden>
+
+                <div id="botonActualizar" class="text-center" hidden>
+                <button type="submit" class="mt-4 w-50 btn btn-lg btn-danger">Actualizar</button>
+                </div>
+
+              </div>
+            </form>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-12">
+
+              <h2 class="rojo text-center"> Tus reservas </h2>
+
+            </div>
+
+            <% if (arrayReservas.length <= 0) { %>
+
+              <div class="col-md-12 text-center mt-5">
+                <h5>No tienes ninguna reserva hecha.</h5>
+                <a href="/reservas/compra" class="w-50 rojosin btn btn-lg btn-outline-danger mt-5">Reservar</a>
+              </div>
+                
+
+
+            <% } %>
+
+            <% arrayReservas.forEach(reserva => { %>
+
+              <div class="col-md-6">
+                <div class="card my-3">
+                  <img class="card-img-top imagenesReservas" src="../public/media/img/<%= reserva.servicio %>.webp">
+                  <div class="card-body">
+                    <h4 class="card-title rojosin"><%= reserva.servicio %></h4>
+                    <ul class="list-group">
+                      
+                    <li class="list-group-item border-0 fs-6"><i class="bi bi-calendar-event-fill rojo"></i> <span class="rojo fs-6">Fecha:</span> <%= reserva.fechareserva %></li>
+                    <li class="list-group-item border-0 fs-6"><i class="bi bi-clock-fill rojo"></i> <span class="rojo fs-6">Hora:</span> <%= reserva.horario %></li>
+                    <li class="list-group-item border-0 fs-6"><i class="bi bi-geo-alt-fill rojo"></i> <span class="rojo fs-6">Región:</span> <%= reserva.region %></li>
+                    <li class="list-group-item border-0 fs-6"><i class="bi bi-people-fill rojo"></i> <span class="rojo fs-6">Personas:</span> <%= reserva.personas %></li>
+                    <li class="list-group-item border-0 fs-6"><i class="bi bi-award-fill rojo"></i> <span class="rojo fs-6">Calidad:</span> <%= reserva.calidad %></li>
+                      
+                  </ul>
+                    <button data-id="<%= reserva._id  %>" class="cancelarReserva  btn btn-danger mt-3 ">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+
+             
+            <% }) %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../public/JS/borrarcuenta.js"></script>
+  <script src="../public/JS/cancelarReserva.js"></script>
+  <script src="../public/JS/editarcuenta.js"></script>
+
+
+        <%- include("template/footer") %>

@@ -1,0 +1,89 @@
+<%- include("template/cabecera", { title: "Partida", style: "servicios" }) %> <%-
+include("template/navbar") %>
+
+    <style>
+      * {
+        transition: all 0.3s;
+      }
+      
+    </style>
+
+  <div id="contenedor" class="container my-5">
+
+      <div class="row">
+
+        <div class="col-12 col-md-8 text-white order-2 order-md-1">
+  
+          <div class="encabezado">
+    
+            <div class="pregunta" id="pregunta">
+            </div>
+            <img src="#" class="imagen" id="imagen">
+            <div class="botonRespuesta" id="btn1" onclick="oprimir_btn(0)"></div>
+            <div class="botonRespuesta" id="btn2" onclick="oprimir_btn(1)"></div>
+            <div class="botonRespuesta" id="btn3" onclick="oprimir_btn(2)"></div>
+            <div class="botonRespuesta" id="btn4" onclick="oprimir_btn(3)"></div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-4 col-12 order-1 order-md-2">
+          <div class="card mb-4 border border-0">
+            <div class="card-body text-center">
+              <h1 class="my-3 rojo"><%= user.nombre  %> <%= user.apellidos  %></h1>
+              <p class="text-muted mb-4"><%= user.email  %></p>
+              <h2 class="puntaje" id="puntaje"></h2>
+              <h2 id="puntosPartida"></h2>
+
+            </div>
+          </div>
+        </div>        
+
+      </div>
+
+    </div>
+
+
+
+      
+
+      
+
+    
+    
+    
+    
+    <div id="finDePartida" class="container text-center">
+      
+      <div class="row d-flex justify-content-center">
+        
+        <div class="col-12">
+          <div class="card mb-4 border border-0">
+            <div class="card-body text-center">
+              <h1 class="my-3 rojo"><%= user.nombre  %> <%= user.apellidos  %></h1>
+              <p class="text-muted"><%= user.email  %></p>
+              <p class="text-center">¡Has terminado la partida! tu puntuación es de <span id="puntuacionFinal" class="rojo"></span> puntos.</p>
+
+              <form action="/jugarPartida" method="post">
+
+                <input type="text" id="puntos" name="puntos" value="" hidden>
+                <input type="text" id="nombre" name="nombre" value="<%= nombre %> <%= apellidos %>" hidden>
+
+                <button type="submit" class="btn btn-danger w-50">Terminar partida</button>
+      
+              </form>
+
+
+
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <script src="../public/JS/trivial.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js"></script>
+    <%- include("template/footer") %>

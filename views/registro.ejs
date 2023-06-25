@@ -1,0 +1,86 @@
+<%- include("template/cabecera", { title: "Registrarse", style: "registro" }) %>
+    <%-
+include("template/navbar") %>
+
+        <% if (mensajeError.length > 0) { %>
+
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                <strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR</strong>
+                <%= mensajeError  %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
+
+
+                <div class="container mb-5 px-4 pantalla">
+                    <div class="row align-items-center g-lg-5 py-5">
+                        <div class="col-md-6 formulario order-md-1 order-2">
+                      
+                            <form class="bg-light p-4" action="/registro" method="post">
+                              <div class="row ">
+                                <div class="col-md-12 col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" name="email" placeholder="Correo electronico" required>
+                                        <label for="floatingInput">Correo electronico</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" name="password" placeholder="Contraseña" required maxlength="16" minlength="8">
+                                        <label for="floatingPassword">Contraseña</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" name="passworddos" placeholder="Confirmar contraseña" required maxlength="16" minlength="8">
+                                        <label for="floatingPassword">Confirmar</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" pattern="^([A-Z]{1}[a-z]+[ ]?){1,2}$" required>
+                                        <label for="floatingInput">Nombre</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" pattern="^([A-Z]{1}[a-z]+[ ]?){1,2}$" required>
+                                        <label for="floatingInput">Apellidos</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="tel" class="form-control" name="telefono" placeholder="Teléfono" maxlength="9" pattern="[0-9]{9}" required>
+                                        <label for="floatingInput">Teléfono</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="direccion" placeholder="Dirección" required>
+                                        <label for="floatingInput">Dirección</label>
+                                      </div>
+                                </div>
+
+                                
+                      
+                                <button class="w-100 btn btn-lg boton-formulario mb-3" type="submit">Crear cuenta</button>
+          
+                                <small class="text-muted">¿Ya tienes una cuenta? <a href="/login">Inicia sesion</a></small>
+                              </div>
+                            </form>
+                          </div>
+                        <div class="col-md-6 text-center text-lg-start text-white order-md-2 order-1">
+                            <h1 class="display-4 fw-bold lh-1 mb-3 texto-primario">Registrate</h1>
+                            <p class="col-lg-10 fs-4 texto-secundario">¡Y vive una experiencia en uno de los paises con más turismo de Asia!</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <%- include("template/footer") %>
